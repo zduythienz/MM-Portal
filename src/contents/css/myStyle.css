@@ -1,0 +1,120 @@
+.guest-layout {
+  background: url("../img/bg1.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100vh;
+}
+.bg-layer {
+  background-color: rgba(248, 247, 216, 0.2);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.center-div {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 650px;
+  height: 450px;
+  min-width: 400px;
+  min-height: 400px;
+  background-color: white;
+  border-radius: 3px;
+}
+.middle-ver {
+  /* position: relative;
+  top: 50%;
+  transform: perspective(1px) translateY(-50%);
+  padding: 30px; */
+  /* display: table-cell; */
+
+  /* vertical-align: middle;
+  text-align: center;
+  display: flex; */
+  position: relative;
+}
+.middle-ver-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  display: block;
+  /* text-align: center; */
+}
+.content-item-full {
+  text-align: center;
+  width: 100%;
+  height: 72px;
+  padding: 5px;
+}
+.middle-ver-content li {
+  list-style: none;
+}
+.content-item-full:first-child {
+  /* border-bottom: 1px solid gray; */
+}
+/* .content-item-full i {
+  margin-top: 16px;
+} */
+
+.guest-col-1 {
+  color: #dee2e8;
+}
+
+.guest-active-link {
+  color: black;
+  border-left: 3px solid red;
+}
+
+.guest-col-2 {
+  background: url("../img/bg2.jpg") no-repeat center center fixed;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
+  height: 100%;
+  color: white;
+}
+.guest-col-2-content {
+  border: 2px solid white;
+  height: 64px;
+  padding-top: 14px;
+}
+.guest-col-2-content span {
+  font-size: 18px;
+}
+.login-form {
+  max-width: 300px;
+}
+.login-form-forgot {
+  float: right;
+}
+.login-form-button {
+  width: 100%;
+}
+.middle-ver-content-col3 {
+  position: absolute;
+  top: 36%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  display: block;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  /* text-align: center; */
+}
+.margin-top-l {
+  margin-top: 16px;
+}
+.login-form-rememberme {
+  float: left;
+}
