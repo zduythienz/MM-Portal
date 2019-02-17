@@ -69,8 +69,21 @@
   color: #dee2e8;
 }
 
+.li-nav-guest-effect {
+  color: #dee2e8;
+}
+.li-nav-guest-effect:hover {
+  color: red;
+  cursor: pointer;
+}
+
+/* .guest-col-1:hover {
+  color: red;
+  cursor: pointer;
+} */
+
 .guest-active-link {
-  color: black;
+  color: black !important;
   border-left: 3px solid red;
 }
 
@@ -117,4 +130,9 @@
 }
 .login-form-rememberme {
   float: left;
+}
+.box-shadow-white {
+  -webkit-box-shadow: 0px 0px 20px 3px rgba(255, 255, 255, 1);
+  -moz-box-shadow: 0px 0px 20px 3px rgba(255, 255, 255, 1);
+  box-shadow: 0px 0px 20px 3px rgba(255, 255, 255, 1);
 }

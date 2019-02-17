@@ -8,7 +8,7 @@ class GuestBackground extends Component {
     return (
       <div className="guest-layout">
         <div className="bg-layer">
-          <div className="center-div">
+          <div className="center-div box-shadow-white">
             <Row type="flex" justify="center" style={{ height: "100%" }}>
               <Col xs={3} sm={3} md={3} lg={3} xl={3} className="middle-ver">
                 <NavGuest />

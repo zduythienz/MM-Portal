@@ -1,4 +1,4 @@
-import { LOGIN_SUCCESS, LOGIN } from "../constants/authentication";
+import { LOGIN_SUCCESS } from "../constants/authentication";
 
 const initialState = {
   isAuthenticated: false
