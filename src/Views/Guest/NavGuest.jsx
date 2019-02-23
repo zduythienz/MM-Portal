@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { changeNavGuest } from "../../actions/navControl";
 import { withRouter, Link } from "react-router-dom";
+import { Icon } from "antd";
 import {
   NAV_GUEST_REGISTER,
   NAV_GUEST_LOGIN
@@ -14,7 +15,7 @@ class NavGuest extends Component {
   }
 
   changeNav = newNav => {
-    if (newNav != this.props.navActivity) {
+    if (newNav !== this.props.navActivity) {
       // this.props.changeNavGuest(newNav);
       newNav === NAV_GUEST_REGISTER
         ? this.props.history.push("/register")
@@ -35,7 +36,8 @@ class NavGuest extends Component {
             }
             onClick={() => this.changeNav(NAV_GUEST_LOGIN)}
           >
-            <i className="fas fa-lg fa-sign-in-alt margin-top-l" />
+            <Icon type="login" className="margin-top-l icon-size-l" />
+            {/* <i className="fas fa-lg fa-sign-in-alt margin-top-l" /> */}
             <div>Login</div>
           </li>
         </Link>
@@ -47,7 +49,8 @@ class NavGuest extends Component {
             }
             onClick={() => this.changeNav(NAV_GUEST_REGISTER)}
           >
-            <i className="fas fa-lg fa-user-alt margin-top-l" />
+            <Icon type="plus-circle" className="margin-top-l icon-size-l" />
+            {/* <i className="fas fa-lg fa-user-alt margin-top-l" /> */}
             <div>Register</div>
           </li>
         </Link>

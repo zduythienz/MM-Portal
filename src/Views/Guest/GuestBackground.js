@@ -17,9 +17,10 @@ class GuestBackground extends Component {
                 <GuestPageName />
               </Col>
               <Col xs={21} sm={21} md={13} lg={13} xl={13}>
-                <div className="middle-ver-content-col3">
+                {/* <div className="middle-ver-content-col3">
                   <div className="content-item-full">{this.props.children}</div>
-                </div>
+                </div> */}
+                {this.props.children}
               </Col>
             </Row>
           </div>

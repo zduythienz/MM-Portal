@@ -1,7 +1,12 @@
-import { LOGIN_SUCCESS } from "../constants/authentication";
+import {
+  LOGIN_SUCCESS,
+  START_LOADING_GUEST,
+  END_LOADING_GUEST
+} from "../constants/authentication";
 
 const initialState = {
-  isAuthenticated: false
+  isAuthenticated: false,
+  isLoading: false
 };
 
 function authentication(state = initialState, action) {
@@ -9,6 +14,8 @@ function authentication(state = initialState, action) {
     return Object.assign({}, state, {
       isAuthenticated: true
     });
+  } else if (action.type === START_LOADING_GUEST) {
+    return { ...state, isLoading: true };
   }
 
   return state;

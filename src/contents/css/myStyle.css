@@ -70,21 +70,23 @@
 }
 
 .li-nav-guest-effect {
-  color: #dee2e8;
+  color: #dae8fc;
 }
 .li-nav-guest-effect:hover {
   color: red;
   cursor: pointer;
 }
-
+.icon-size-l {
+  font-size: 18px;
+}
 /* .guest-col-1:hover {
   color: red;
   cursor: pointer;
 } */
 
 .guest-active-link {
-  color: black !important;
-  border-left: 3px solid red;
+  color: #e00000 !important;
+  border-left: 2px solid red;
 }
 
 .guest-col-2 {
@@ -104,7 +106,8 @@
 .guest-col-2-content span {
   font-size: 18px;
 }
-.login-form {
+.login-form,
+register-form {
   max-width: 300px;
 }
 .login-form-forgot {
@@ -124,6 +127,17 @@
   padding-right: 20px;
 
   /* text-align: center; */
+}
+
+.middle-ver-content-register-col3 {
+  position: absolute;
+  top: 24%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  display: block;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 .margin-top-l {
   margin-top: 16px;

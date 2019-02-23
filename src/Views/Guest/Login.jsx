@@ -17,7 +17,13 @@ class Login extends Component {
   }
 
   render() {
-    return <LoginForm handleSubmit={this.login} />;
+    return (
+      <div className="middle-ver-content-col3">
+        <div className="content-item-full">
+          <LoginForm className="" handleSubmit={this.login} />
+        </div>
+      </div>
+    );
   }
 }
 const loginForm = Form.create({ name: "normal_login" })(Login);
