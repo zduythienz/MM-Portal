@@ -9,6 +9,10 @@ import store from "./store/index";
 
 import * as serviceWorker from "./serviceWorker";
 
+const mmToken = localStorage.getItem("mm_token");
+if (mmToken) {
+  
+}
 ReactDOM.render(
   <Provider store={store}>
     <App />

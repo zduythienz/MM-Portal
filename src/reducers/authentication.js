@@ -6,13 +6,18 @@ import {
 
 const initialState = {
   isAuthenticated: false,
-  isLoading: false
+  isLoading: false,
+  token: ""
 };
 
 function authentication(state = initialState, action) {
   if (action.type === LOGIN_SUCCESS) {
+    console.log("====================================");
+    console.log(`action loginsuccess`);
+    console.log("====================================");
     return Object.assign({}, state, {
-      isAuthenticated: true
+      isAuthenticated: true,
+      token: action.payload
     });
   } else if (action.type === START_LOADING_GUEST) {
     return { ...state, isLoading: true };

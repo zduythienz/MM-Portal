@@ -20,7 +20,7 @@ function mapStateToProps(state) {
   console.log("user route", state);
 
   return {
-    isAuthenticated: state.authentication.isAuthenticated
+    isAuthenticated: !!state.authentication.isAuthenticated
   };
 }
 

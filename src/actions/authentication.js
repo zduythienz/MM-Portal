@@ -22,18 +22,27 @@ export function submitRegister(payload) {
 }
 
 export const login = data => dispatch => {
-  console.log("haven't api -> auto login success");
-
-  dispatch(loginSuccess());
+  dispatch(startLoadingGuest());
+  return api.post("authen", { ...data }).then(
+    res => {
+      console.log(res.data);
+      localStorage.setItem("mm_token", res.data.data.token);
+      // dispatch(endLoadingGuest());
+      console.log(`dispatch loginsuccess: ${res.data.data.token}`);
+      dispatch(loginSuccess(res.data.data.token));
+    },
+    err => {
+      console.log(err);
+    }
+  );
 };
 
 export const register = data => dispatch => {
   dispatch(startLoadingGuest());
   return api.post("register", { ...data }).then(
     res => {
-      console.log(res.data);
-      localStorage.setItem("user_id", res.data._id);
-      // dispatch(endLoadingGuest());
+      localStorage.setItem("mm_token", res.data.data);
+      dispatch(loginSuccess(res.data.data));
     },
     err => {
       console.log(err);

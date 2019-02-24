@@ -16,7 +16,7 @@ class LoginForm extends Component {
     return (
       <Form onSubmit={this.handleSubmit} className="login-form">
         <Form.Item>
-          {getFieldDecorator("userName", {
+          {getFieldDecorator("username", {
             rules: [{ required: true, message: "Please input your username!" }]
           })(
             <Input
@@ -27,9 +27,8 @@ class LoginForm extends Component {
           )}
         </Form.Item>
         <Form.Item>
-          {getFieldDecorator("remember", {
-            valuePropName: "checked",
-            initialValue: true
+          {getFieldDecorator("password", {
+            rules: [{ required: true, message: "Please input your password!" }]
           })(
             <Input
               size="large"
