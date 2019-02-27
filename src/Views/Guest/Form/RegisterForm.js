@@ -12,6 +12,8 @@ class RegisterForm extends Component {
       if (!err) {
         // this.props.handleSubmit(values);
         this.props.register(values);
+      } else {
+        console.log("login fail");
       }
     });
   };

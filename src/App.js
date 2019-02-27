@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
-import "antd/dist/antd.min.css";
+// import "antd/dist/antd.min.css";
 import "./contents/css/myStyle.css";
 import Routes from "./routes";
 

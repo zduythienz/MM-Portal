@@ -2,12 +2,16 @@ import {
   LOGIN_SUCCESS,
   REGISTER,
   START_LOADING_GUEST,
-  END_LOADING_GUEST
+  END_LOADING_GUEST,
+  LOGIN_FAIL
 } from "../constants/authentication";
 import api from "../common/api";
 
 export function loginSuccess(payload) {
   return { type: LOGIN_SUCCESS, payload };
+}
+export function loginFail(payload) {
+  return { type: LOGIN_FAIL, payload };
 }
 
 export const startLoadingGuest = () => ({
@@ -27,12 +31,18 @@ export const login = data => dispatch => {
     res => {
       console.log(res.data);
       localStorage.setItem("mm_token", res.data.data.token);
-      // dispatch(endLoadingGuest());
+
       console.log(`dispatch loginsuccess: ${res.data.data.token}`);
       dispatch(loginSuccess(res.data.data.token));
+      dispatch(endLoadingGuest());
     },
     err => {
-      console.log(err);
+      if (err.response && err.response.status === 400) {
+        dispatch(loginFail(err.response));
+      } else {
+        dispatch(loginFail({ status: 500 }));
+      }
+      dispatch(endLoadingGuest());
     }
   );
 };
@@ -43,9 +53,11 @@ export const register = data => dispatch => {
     res => {
       localStorage.setItem("mm_token", res.data.data);
       dispatch(loginSuccess(res.data.data));
+      dispatch(endLoadingGuest());
     },
     err => {
       console.log(err);
+      dispatch(endLoadingGuest());
     }
   );
 };

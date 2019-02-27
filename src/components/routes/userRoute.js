@@ -2,14 +2,17 @@ import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { Route, Redirect } from "react-router-dom";
+import UserBackground from "../../Views/User/GuestLayout/UserBackground";
 
 const UserRoute = ({ isAuthenticated, component: Component, ...rest }) => (
-  <Route
-    {...rest}
-    render={props =>
-      isAuthenticated ? <Component {...props} /> : <Redirect to="/login" />
-    }
-  />
+  <UserBackground>
+    <Route
+      {...rest}
+      render={props =>
+        isAuthenticated ? <Component {...props} /> : <Redirect to="/login" />
+      }
+    />
+  </UserBackground>
 );
 
 UserRoute.propTypes = {

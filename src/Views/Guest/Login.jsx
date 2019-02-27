@@ -20,7 +20,12 @@ class Login extends Component {
     return (
       <div className="middle-ver-content-col3">
         <div className="content-item-full">
-          <LoginForm className="" handleSubmit={this.login} />
+          <LoginForm
+            className=""
+            handleSubmit={this.login}
+            error={this.props.error}
+            isLoading={this.props.isLoading}
+          />
         </div>
       </div>
     );
@@ -28,7 +33,14 @@ class Login extends Component {
 }
 const loginForm = Form.create({ name: "normal_login" })(Login);
 
+function mapStateToProps(state) {
+  return {
+    error: state.authentication.error,
+    isLoading: state.authentication.isLoading
+  };
+}
+
 export default connect(
-  null,
+  mapStateToProps,
   { login, changeNavGuest }
 )(loginForm);

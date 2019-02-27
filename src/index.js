@@ -6,12 +6,12 @@ import App from "./App";
 
 import { Provider } from "react-redux";
 import store from "./store/index";
-
+import { loginSuccess } from "./actions/authentication";
 import * as serviceWorker from "./serviceWorker";
 
 const mmToken = localStorage.getItem("mm_token");
 if (mmToken) {
-  
+  store.dispatch(loginSuccess(mmToken));
 }
 ReactDOM.render(
   <Provider store={store}>
